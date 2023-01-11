@@ -11,7 +11,7 @@ from pandas.io.json import json_normalize
 import json
 
 #Sends request to url
-url = "http://ddragon.leagueoflegends.com/cdn/12.23.1/data/en_US/item.json"
+url = "http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/item.json"
 R = requests.get(url)
 
 #Save file from url as json file
@@ -30,4 +30,4 @@ name['description'] = name['description'].str.replace(r'<[^<>]*>', '', regex=Tru
 name = name[name['gold.purchasable'] == True]
 
 #Save final datafram to csv for excel
-name.to_csv('LeagueItems.csv', index=False)
+name.to_csv('LeagueItemsFinal1.csv', index=False)
